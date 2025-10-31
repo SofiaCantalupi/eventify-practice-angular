@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Conferencia Anual de Tecnología",
+      "date": "2025-11-15",
+      "category": "Tecnología",
+      "description": "El evento más grande del año sobre las últimas tendencias en desarrollo de software."
+    },
+    {
+      "id": 2,
+      "name": "Festival de Música Indie",
+      "date": "2025-10-25",
+      "category": "Música",
+      "description": "Un día completo con las mejores bandas emergentes de la escena local."
+    }
+  ],
+  "categories": [
+    { "id": "tecnologia", "name": "Tecnología" },
+    { "id": "musica", "name": "Música" },
+    { "id": "arte", "name": "Arte y Cultura" },
+    { "id": "deportes", "name": "Deportes" }
+  ]
+}
