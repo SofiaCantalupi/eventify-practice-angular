@@ -1,0 +1,37 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name:</label>
+        <input
+        formControlName="name" 
+        type="text" 
+        id="name">
+    </div>
+
+    <div>
+        <label for="date">Date</label>
+        <input 
+        formControlName="date"
+        type="date" 
+        id="date">
+    </div>
+
+    <div>
+        <label for="category">Category:</label>
+        <select formControlName="category" id="category">
+            <option value="">Select an option</option>
+            @for (category of categories(); track category.id) {
+                <option [value]="category.id">{{category.name}}</option>
+            }
+        </select>
+    </div>
+    
+    <div>
+        <label for="description">Description:</label>
+        <textarea 
+        formControlName="description"
+        id="description"></textarea>
+    </div>
+
+    <button type="submit">Create Event</button>
+
+</form>
