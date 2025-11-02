@@ -3,6 +3,7 @@ import { Category } from '../../category';
 import { CategoryService } from '../../services/category-service';
 import { EventService } from '../../services/event-service';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-form',
@@ -14,6 +15,7 @@ export class EventForm implements OnInit {
   categoryService = inject(CategoryService);
   eventService = inject(EventService);
   fb = inject(FormBuilder);
+  router = inject(Router);
 
   categories = this.categoryService.categories;
 
@@ -37,9 +39,10 @@ export class EventForm implements OnInit {
       description: this.eventForm.value.description!
     };
 
-    console.log(eventData);
     this.eventService.createEvent(eventData);
-  
+
+    this.eventForm.reset();
+    this.router.navigate(['/events']);
   }
 }
 }
