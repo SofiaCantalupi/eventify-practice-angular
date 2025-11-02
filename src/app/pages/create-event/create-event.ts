@@ -5,7 +5,7 @@ import { EventForm } from '../../components/event-form/event-form';
 
 @Component({
   selector: 'app-create-event',
-  imports: [Header, Footer, EventForm],
+  imports: [EventForm],
   templateUrl: './create-event.html',
   styleUrl: './create-event.css',
 })
