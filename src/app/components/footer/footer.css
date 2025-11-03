@@ -1,0 +1,11 @@
+footer{
+    background-color: var(--color-primary);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-text{
+    color: azure;
+    font-family: 'Courier New', Courier, monospace;
+}
