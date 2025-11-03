@@ -1,0 +1,14 @@
+.title{
+    font-family: var(--font-display);
+    text-align: center;
+    color: var(--color-secondary);
+    font-size: 4.2rem;
+}
+
+.description {
+    text-align: center;
+    text-wrap: pretty;
+    font-family: var(--font-display);
+    margin-bottom: 5rem;
+    font-size: 1.3rem;
+}
