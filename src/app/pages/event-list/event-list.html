@@ -1,12 +1,15 @@
-<h2>Uncoming events</h2>
+<h2 class="subtitle">Uncoming events</h2>
 
-<div>
+<div class="articles-grid">
   @for (event of events(); track event.id) {
   <a href="#"
-    ><article>
+    ><article class="article category-{{event.category}}">
       <h3>{{ event.name }}</h3>
-      <p>Date: {{ event.date }}</p>
-      <span>{{ getCategoryName(event.category) }}</span>
+
+      <div class="info">
+        <p class="date">{{ event.date }}</p>
+        <span class="category">{{ getCategoryName(event.category) }}</span>
+      </div>
     </article>
   </a>
   }
