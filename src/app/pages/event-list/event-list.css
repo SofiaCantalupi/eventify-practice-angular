@@ -44,18 +44,18 @@
   }
 }
 
-.category-tecnologia .category {
+.category-tecnology .category {
   background-color: rgb(167, 87, 243);
 }
 
-.category-musica .category {
+.category-music .category {
   background-color: rgb(43, 226, 168);
 }
 
-.category-arte .category{
+.category-art .category{
   background-color: rgb(235, 221, 63);
 }
 
-.category-deportes .category{
+.category-sport .category{
   background-color: rgb(208, 122, 190);
 }
