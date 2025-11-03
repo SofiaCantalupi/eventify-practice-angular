@@ -1,0 +1,12 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+}
