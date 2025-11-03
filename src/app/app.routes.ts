@@ -19,5 +19,6 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: 'events',
+    pathMatch: 'full'
   }
 ];
