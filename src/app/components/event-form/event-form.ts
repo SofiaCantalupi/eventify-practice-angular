@@ -43,6 +43,16 @@ export class EventForm implements OnInit {
 
     this.eventForm.reset();
     this.router.navigate(['/events']);
+    
+
+    /* puede ser tmb this.router.navigateByUrl("events"); 
+    
+     navigate(['/events']) es más flexible, ya que crea la URL a partir de segmentos de un array y 
+     aplica "parches" a la URL actual, mientras que navigateByUrl("events") reemplaza por completo 
+     la URL actual con la que se le proporciona como cadena de texto. Esto significa que navigateByUrl es para navegación absoluta, 
+     mientras que navigate es para construir rutas dinámicas a partir de la URL existente. 
+    
+    */
   }
 }
 }
