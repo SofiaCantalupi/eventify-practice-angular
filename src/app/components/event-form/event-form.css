@@ -51,6 +51,11 @@
   }
 }
 
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .error {
   color: red;
   font-size: 0.8rem;
