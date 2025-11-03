@@ -4,14 +4,14 @@
       "id": "1",
       "name": "Conferencia Anual de Tecnología",
       "date": "2025-11-15",
-      "category": "Tecnología",
+      "category": "tecnologia",
       "description": "El evento más grande del año sobre las últimas tendencias en desarrollo de software."
     },
     {
       "id": "2",
       "name": "Festival de Música Indie",
       "date": "2025-10-25",
-      "category": "Música",
+      "category": "musica",
       "description": "Un día completo con las mejores bandas emergentes de la escena local."
     },
     {
@@ -20,6 +20,27 @@
       "category": "musica",
       "date": "2025-11-11",
       "description": "Rock festival"
+    },
+    {
+      "id": "b4b7",
+      "name": "MardelValley",
+      "category": "tecnologia",
+      "date": "2025-11-28",
+      "description": "TechEvent"
+    },
+    {
+      "id": "f9b4",
+      "name": "42k Marathon",
+      "category": "deportes",
+      "date": "2025-11-26",
+      "description": "42k running 6th edition"
+    },
+    {
+      "id": "3f32",
+      "name": "Museum Night",
+      "category": "arte",
+      "date": "2025-12-10",
+      "description": "Visit all Mar del Plata museums"
     }
   ],
   "categories": [
