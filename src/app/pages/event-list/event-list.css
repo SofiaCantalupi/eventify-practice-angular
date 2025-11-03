@@ -51,3 +51,11 @@
 .category-musica .category {
   background-color: rgb(43, 226, 168);
 }
+
+.category-arte .category{
+  background-color: rgb(235, 221, 63);
+}
+
+.category-deportes .category{
+  background-color: rgb(208, 122, 190);
+}
