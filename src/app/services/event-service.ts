@@ -38,4 +38,7 @@ export class EventService {
       }
     });
   }
+
+
+  /* para editar se hace un atributo que puede ser Event o undefined para guardar el evento a editar */
 }
