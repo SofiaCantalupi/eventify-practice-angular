@@ -41,6 +41,13 @@
       "category": "art",
       "date": "2025-12-10",
       "description": "Visit all Mar del Plata museums"
+    },
+    {
+      "id": "a9d5",
+      "name": "Lollapaloza",
+      "category": "music",
+      "date": "2026-01-06",
+      "description": "More than 50 bands and artists in stage."
     }
   ],
   "categories": [
