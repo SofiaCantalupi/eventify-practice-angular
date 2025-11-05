@@ -53,7 +53,7 @@ export class EventService {
     );
   }
 
-  delete(id: number){
+  deleteEvent(id: number){
     return this.http.delete<EventI>(`${this.urlApi}/${id}`).pipe(
       tap(()=> {
         this.eventsState.update((events) => events.filter(e => e.id !== id));
