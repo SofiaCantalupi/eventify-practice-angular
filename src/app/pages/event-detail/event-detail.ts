@@ -1,11 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { EventI } from '../../eventI';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { EventService } from '../../services/event-service';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.css',
 })
@@ -18,11 +18,12 @@ export class EventDetail implements OnInit{
   event = signal<EventI | null>(null);
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.params['/id']);
+    const id = Number(this.route.snapshot.params['id']);
 
     this.eventService.getEventByID(id).subscribe(
       data => this.event.set(data)
     );
+
   }
 
   navigateToUpdate(){
@@ -30,7 +31,24 @@ export class EventDetail implements OnInit{
     this.router.navigate(['/events', id, 'update']);
   }
 
-  delete(id: number){
+  deleteEvent(): void {
+  const currentEvent = this.event();
+
+  if (!currentEvent) {
+    console.error('No event loaded to delete');
+    return;
   }
+
+  this.eventService.deleteEvent(currentEvent.id).subscribe({
+    next: () => {
+      console.log('Event deleted successfully');
+      this.router.navigate(['/events']); // volver al listado
+    },
+    error: (err) => {
+      console.error('Error deleting event:', err);
+    }
+  });
+}
+
 
 }

@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { EventService } from '../../services/event-service';
 import { CategoryService } from '../../services/category-service';
 import { Category } from '../../category';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-event-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './event-list.html',
   styleUrl: './event-list.css',
 })

@@ -11,6 +11,10 @@
 
   <div>
     <button type="submit" (click)="navigateToUpdate()">Update Event</button>
-    <button>Delete</button>
+    <button (click)="deleteEvent()">Delete</button>
+  </div>
+
+  <div>
+    <button routerLink="/events">Go back</button>
   </div>
 </div>

@@ -2,8 +2,8 @@
 
 <div class="articles-grid">
   @for (event of events(); track event.id) {
-  <a href="#"
-    ><article class="article category-{{event.category}}">
+  <a [routerLink]="['/events', event.id]">
+    <article class="article category-{{event.category}}">
       <h3>{{ event.name }}</h3>
 
       <div class="info">
