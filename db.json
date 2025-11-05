@@ -1,55 +1,5 @@
 {
-  "events": [
-    {
-      "id": "1",
-      "name": "Annual Technology Conference",
-      "date": "2025-11-15",
-      "category": "tecnology",
-      "description": "The biggest event of the year on the latest trends in software development."
-    },
-    {
-      "id": "2",
-      "name": "Indie Music Festival",
-      "date": "2025-10-25",
-      "category": "music",
-      "description": "A full day with the best emerging bands from the local scene."
-    },
-    {
-      "id": "2f5d",
-      "name": "Music Winds",
-      "category": "music",
-      "date": "2025-11-11",
-      "description": "Rock festival"
-    },
-    {
-      "id": "b4b7",
-      "name": "MardelValley",
-      "category": "tecnology",
-      "date": "2025-11-28",
-      "description": "TechEvent"
-    },
-    {
-      "id": "f9b4",
-      "name": "42k Marathon",
-      "category": "sport",
-      "date": "2025-11-26",
-      "description": "42k running 6th edition"
-    },
-    {
-      "id": "3f32",
-      "name": "Museum Night",
-      "category": "art",
-      "date": "2025-12-10",
-      "description": "Visit all Mar del Plata museums"
-    },
-    {
-      "id": "a9d5",
-      "name": "Lollapaloza",
-      "category": "music",
-      "date": "2026-01-06",
-      "description": "More than 50 bands and artists in stage."
-    }
-  ],
+  "events": [],
   "categories": [
     {
       "id": "tecnology",
