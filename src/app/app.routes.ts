@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { CreateEvent } from './pages/create-event/create-event';
 import { EventList } from './pages/event-list/event-list';
+import { EventForm } from './components/event-form/event-form';
+import { EventDetail } from './pages/event-detail/event-detail';
 
 export const routes: Routes = [
   {
@@ -9,8 +10,16 @@ export const routes: Routes = [
     pathMatch: 'full' // Cuando se usa path: '' con redirectTo → siempre debe usarse pathMatch: 'full'
   },
   {
-    path: 'create',
-    component: CreateEvent,
+    path: 'events/create',
+    component: EventForm,
+  },
+  {
+    path: 'events/:id',
+    component: EventDetail
+  },
+  {
+    path: 'events/:id/update',
+    component: EventForm
   },
   {
     path: 'events',
