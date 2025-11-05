@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { signal } from '@angular/core';
 import { EventI } from '../eventI';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -34,13 +35,30 @@ export class EventService {
         this.eventsState.update(events => [...events, data]);
       },
       error: (error) => {
-        console.log('Error creating the event:', event)
+        console.log('Error creating the event:', error)
       }
     });
   }
 
   getEventByID(id: number){
     return this.http.get<EventI>(`${this.urlApi}/${id}`);
+  }
+
+  updateEvent(id: number, newEvent: Omit<EventI,'id'>){
+    return this.http.put<EventI>(`${this.urlApi}/${id}`, newEvent).pipe(
+      tap ((data) => {
+        this.eventsState.update((events) => 
+          events.map((event) => (event.id === id ? data : event)));
+      })
+    );
+  }
+
+  delete(id: number){
+    return this.http.delete<EventI>(`${this.urlApi}/${id}`).pipe(
+      tap(()=> {
+        this.eventsState.update((events) => events.filter(e => e.id !== id));
+      })
+    );
   }
 
   /* para editar se hace un atributo que puede ser Event o undefined para guardar el evento a editar */
