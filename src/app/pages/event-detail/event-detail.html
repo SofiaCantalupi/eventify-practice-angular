@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <p>{{ event()?.date }}</p>
+    <p>{{ event()?.category }}</p>
+  </div>
+
+  <div>
+    <h3>{{ event()?.name }}</h3>
+    <p>{{ event()?.description }}</p>
+  </div>
+
+  <div>
+    <button type="submit" (click)="navigateToUpdate()">Update Event</button>
+    <button>Delete</button>
+  </div>
+</div>
