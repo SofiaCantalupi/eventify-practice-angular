@@ -39,6 +39,9 @@ export class EventService {
     });
   }
 
+  getEventByID(id: number){
+    return this.http.get<EventI>(`${this.urlApi}/${id}`);
+  }
 
   /* para editar se hace un atributo que puede ser Event o undefined para guardar el evento a editar */
 }
