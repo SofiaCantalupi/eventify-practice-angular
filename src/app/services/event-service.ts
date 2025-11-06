@@ -30,14 +30,11 @@ export class EventService {
   }
 
   createEvent(event: Omit<EventI, 'id'>){
-    this.http.post<EventI>(this.urlApi, event).subscribe({
-      next: (data) => {
+    return this.http.post<EventI>(this.urlApi, event).pipe(
+      tap((data) => {
         this.eventsState.update(events => [...events, data]);
-      },
-      error: (error) => {
-        console.log('Error creating the event:', error)
       }
-    });
+    ));
   }
 
   getEventByID(id: number){

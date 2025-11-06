@@ -1,8 +1,14 @@
+<h3 class="subtitle">{{ isEditingMode() ? 'Update the event' : 'Create a new event' }}</h3>
+
+@if(!isEditingMode()){
+    <a routerLink="/events">← Go back</a>
+  }
+
 <div class="form-container">
   <form class="form" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <div class="input-div">
       <label class="label" for="name">Event name:</label>
-      
+
       <input
         class="input"
         placeholder="Enter the event name..."
@@ -13,7 +19,7 @@
       @if(eventForm.get("name")?.invalid && eventForm.get("name")?.touched){
       <p class="error">
         @if(eventForm.get("name")?.errors?.['required']){ This field is required.}
-        @if(eventForm.get("name")?.errors?.['minlenght']){Name must be at least 3 characters}
+        @if(eventForm.get("name")?.errors?.['minl ength']){Name must be at least 3 characters}
       </p>
       }
     </div>
@@ -30,7 +36,7 @@
       />
 
       @if(eventForm.get("date")?.invalid && eventForm.get("date")?.touched){
-        <p class="error">This field is required.</p>
+      <p class="error">This field is required.</p>
       }
     </div>
 
@@ -43,7 +49,7 @@
         }
       </select>
       @if(eventForm.get("category")?.invalid && eventForm.get("category")?.touched){
-        <p class="error">Please select a category.</p>
+      <p class="error">Please select a category.</p>
       }
     </div>
 
@@ -56,14 +62,23 @@
         id="description"
       ></textarea>
       @if (eventForm.get("description")?.invalid && eventForm.get("description")?.touched) {
-        <p class="error">
-          @if (eventForm.get("description")?.errors?.['required']) { This field is required.}
-          @if (eventForm.get("description")?.errors?.['minlength']) {Description must be at least 3 character.}
-        </p>
+      <p class="error">
+        @if (eventForm.get("description")?.errors?.['required']) { This field is required.} @if
+        (eventForm.get("description")?.errors?.['minlength']) {Description must be at least 3
+        character.}
+      </p>
       }
     </div>
 
-    <button class="btn-submit" type="submit" [disabled]="eventForm.invalid">Create Event</button>
+    <button class="btn-submit" type="submit" [disabled]="eventForm.invalid">
+      {{ isEditingMode() ? 'Update' : 'Create' }}
+    </button>
+
+    @if(isEditingMode()){
+      <a [routerLink]="['/events', eventSelected()?.id]"> Cancel update</a>
+    }
   </form>
 
+  
 </div>
+
