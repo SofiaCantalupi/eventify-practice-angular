@@ -9,8 +9,7 @@ import { EventService } from '../../services/event-service';
   templateUrl: './event-detail.html',
   styleUrl: './event-detail.css',
 })
-export class EventDetail implements OnInit{
-
+export class EventDetail implements OnInit {
   router = inject(Router);
   route = inject(ActivatedRoute);
   eventService = inject(EventService);
@@ -20,35 +19,33 @@ export class EventDetail implements OnInit{
   ngOnInit(): void {
     const id = Number(this.route.snapshot.params['id']);
 
-    this.eventService.getEventByID(id).subscribe(
-      data => this.event.set(data)
-    );
-
+    this.eventService.getEventByID(id).subscribe((data) => this.event.set(data));
   }
 
-  navigateToUpdate(){
+  navigateToUpdate() {
     const id = this.event()?.id;
     this.router.navigate(['/events', id, 'update']);
   }
 
   deleteEvent(): void {
-  const currentEvent = this.event();
+    // agregar confirm()
+    const currentEvent = this.event();
 
-  if (!currentEvent) {
-    console.error('No event loaded to delete');
-    return;
-  }
-
-  this.eventService.deleteEvent(currentEvent.id).subscribe({
-    next: () => {
-      console.log('Event deleted successfully');
-      this.router.navigate(['/events']); // volver al listado
-    },
-    error: (err) => {
-      console.error('Error deleting event:', err);
+    if (!currentEvent) {
+      console.error('No event loaded to delete');
+      return;
     }
-  });
-}
 
-
+    if (confirm('Are you sure you want to delete this events?')) {
+      this.eventService.deleteEvent(currentEvent.id).subscribe({
+        next: () => {
+          console.log('Event deleted successfully');
+          this.router.navigate(['/events']); // volver al listado
+        },
+        error: (err) => {
+          console.error('Error deleting event:', err);
+        },
+      });
+    }
+  }
 }
