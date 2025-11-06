@@ -1,3 +1,5 @@
+<a routerLink="/events">← Go back</a>
+
 <div>
   <div>
     <p>{{ event()?.date }}</p>
@@ -12,9 +14,5 @@
   <div>
     <button type="submit" (click)="navigateToUpdate()">Update Event</button>
     <button (click)="deleteEvent()">Delete</button>
-  </div>
-
-  <div>
-    <button routerLink="/events">Go back</button>
   </div>
 </div>
