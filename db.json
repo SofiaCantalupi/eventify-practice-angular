@@ -1,5 +1,34 @@
 {
-  "events": [],
+  "events": [
+    {
+      "name": "Anual Tecnology Conference",
+      "category": "tecnology",
+      "date": "2026-01-01",
+      "description": "The biggest tech event with the lastest innovations",
+      "id": 1
+    },
+    {
+      "name": "Music Winds",
+      "category": "music",
+      "date": "2025-11-27",
+      "description": "More than 50 bands and artists in stage.",
+      "id": 2
+    },
+    {
+      "name": "Marathon 21k",
+      "category": "sport",
+      "date": "2025-12-20",
+      "description": "Last marathon of the year.",
+      "id": 3
+    },
+    {
+      "name": "Museum Night",
+      "category": "art",
+      "date": "2026-01-22",
+      "description": "Visit all the city's museums in one night, on an incredible tour.",
+      "id": 4
+    }
+  ],
   "categories": [
     {
       "id": "tecnology",
